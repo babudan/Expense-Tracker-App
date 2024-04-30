@@ -2,8 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const mongoose = require("mongoose");
 require('dotenv').config();
-const Transactionmodel = require("./model/transaction");
-const route = require('./route')
+const route = require('./route/route')
 const app = express();
 
 app.use(cors());
@@ -15,6 +14,11 @@ mongoose.connect(process.env.DB,
 
 
 app.use('/', route);
+
+//----------handling wrong api edge case--------------------------------------------
+app.use((req, res, next) => {
+    res.status(404).send({ status: false, error: "path not found" });
+})
 
 app.listen(process.env.PORT, function () {
     console.log("Express app running on port" + process.env.PORT);
