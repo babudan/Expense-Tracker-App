@@ -2,7 +2,7 @@ const express = require('express')
 const route = express.Router()
 const Transactionmodel = require("../model/transaction");
 
-route.get("/api/test", (req, res) => {
+route.get("/", (req, res) => {
     res.json({ body: "test ok1111" })
 })
 

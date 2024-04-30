@@ -5,7 +5,13 @@ require('dotenv').config();
 const route = require('./route/route')
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://expense-tracker-app-dun.vercel.app/"],
+        methods: ['GET', 'POST'],
+        credentials: true
+    }
+));
 app.use(express.json());
 
 mongoose.set('strictQuery', true);
