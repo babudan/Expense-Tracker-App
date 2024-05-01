@@ -6,11 +6,11 @@ const route = require('./route/route')
 const app = express();
 
 app.use(cors(
-    // {
-    //     origin: "https://expense-tracker-app-backend-hazel.vercel.app",
-    //     methods: ['GET', 'POST'],
-    //     credentials: true
-    // }
+    {
+        origin: ["https://expense-tracker-app-frontend-five.vercel.app"],
+        methods: ['GET', 'POST'],
+        credentials: true
+    }
 ));
 app.use(express.json());
 
