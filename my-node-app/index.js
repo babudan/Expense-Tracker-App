@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["*"],
+        origin: ["https://expense-tracker-app-frontend-five.vercel.app"],
         methods: ['GET', 'POST'],
         credentials: true
     }
