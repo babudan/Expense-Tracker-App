@@ -5,13 +5,13 @@ require('dotenv').config();
 const route = require('./route/route')
 const app = express();
 
-app.use(cors(
-    {
-        origin: "*",
-        methods: ['GET', 'POST'],
-        credentials: true
-    }
-));
+// app.use(cors(
+//     {
+//         origin: "*",
+//         methods: ['GET', 'POST'],
+//         credentials: true
+//     }
+// ));
 app.use(express.json());
 
 mongoose.set('strictQuery', true);
